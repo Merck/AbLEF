@@ -1,0 +1,100 @@
+{
+"paths": {
+    "data_directory": "data",
+    "checkpoint_dir": "models/weights",
+    "log_dir": "logs/",
+    "precision": 32,
+    "use_atomsets": "roidDIST",
+    "resprop_maps": false,
+    "median_ref": false,
+
+    "**precision": "16, 32, or 64",
+    "**use_atomsets": "CaDIST, CbDIST, roidDIST, scoidDIST, or add more atomsets (or channels) per residue e.g., backbone/sidechain atoms",
+    "**resprop_maps": "add, channel, or false (if channel, encoder: in_channels = # of atomsets + 1)",
+    "**median_ref": "true or false (if true, encoder: in_channels = (# of atomsets + resprop_maps) * 2)"
+  },
+
+  "network": {
+    "encoder": {
+      "in_channels": 1,
+      "num_layers" : 2,
+      "kernel_size": 3,
+      "n_hidden_fusion": 64
+    },
+    "transformer": {
+      "depth": 1,
+      "heads": 8,
+      "mlp_dim": 32,
+      "dropout": 0.4849075056
+    }, 
+    "decoder": {
+        "kernel_size": 1
+    },
+    "language": {
+      "model": "ablang",
+      "graph": false,
+      "first_chain": "L",
+      "cdr_patch": false,
+      "drop_rate": 0.256896887,
+      "freeze": false,
+      "freeze_layer_count": 9,
+      "num_predictions": 1,
+
+      "**model": "ablang (12), protbert (30), protbert-bfd (30), none, ablang-only (12), protbert-only (30), protbert-bfd-only (30)",
+      "**graph": "false, GVP, GAT",
+      "**first_chain": "L or H in pdb files",
+      "**cdr_patch": "false or cdrs or cdr3s (sliced cdr patches from pbd dist maps (imgt)",
+      "**freeze_layer_count": "1-12 for ablang, 1-30 for protbert/protbert-bfd"
+    }
+  },
+
+  "training": {
+     "train_all_data": false,
+     "kfold": 10,
+     "val_proportion": false,
+     "ray_tune": false,
+     "seed": 123,
+     "verbose": false,
+     "load_checkpoints": false,
+
+
+     "min_loss": 5,
+     "best_val_score": 300,
+
+     "num_epochs": 50,
+     "batch_size": 16,
+     "n_workers": 0,
+
+     "ens_L": 3,
+     "set_L": 3,
+
+     "lr_coder": 0.0001568688,
+     "lr_transformer": 0.0000012958,
+     "lr_lc": 0.0000000129,
+     "lr_hc": 0.0000045603,
+     "lr_strategy": 3,
+     "lr_step": 1,
+     "lr_decay": 0.8787585778193224,
+
+     "combine_losses": false,
+     "loss": "L2",
+     "alpha1": 0.5,
+     "alpha2": 0.5,
+
+     "**lr_strategy": "0 = ReducePlateau, 1 = CosineAnneal, 2 = StepDecay, 3 = linear warmup inverse sqrt decay, 4 = Constant",
+     "**losses": "L1 or L2 or combination (alpha1*L1 + alpha2*L2)"
+  },
+
+  "holdout":{
+    "model_path": "./models/weights/batch_16_time_2023-04-21-02-01-40-350874/",
+    "atomsets": "roidDIST",
+    "filename": "hp_tune_2137201a_protbert_ens3_kf10_epoch50_roidDIST_32bit",
+    "validation": false,
+    "ray_tune": false,
+    "checkpoint": false,
+    "resprop_maps": false,
+    "validated_model": false,
+    "epoch_num": false,
+    "holdout_data_path": "data"
+ }
+}
