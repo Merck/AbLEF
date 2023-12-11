@@ -11,6 +11,7 @@ current models include:
         title = {{AbLEF}: {Antibody} {Language} {Ensemble} {Fusion} for {thermodynamically} {empowered} {property} {predictions}},
         journal = {The NeurIPS Workshop on New Frontiers of AI for Drug Discovery and Development (AI4D3 2023)},
         author = {Rollins, Zachary A and Widatalla, Talal and Waight, Andrew and Cheng, Alan C and Metwally, Essam},
+	url = {https://ai4d3.github.io/papers/55.pdf},
         month = dec,
         year = {2023}}
 ```
@@ -57,6 +58,7 @@ current models include:
 	title = {{AbPROP}: {Language} and {Graph} {Deep} {Learning} for {Antibody} {Property} {Prediction}},
 	journal = {ICML Workshop on Computational Biology},
 	author = {Widatalla, Talal and Rollins, Zachary A and Chen, Ming-Tang and Waight, Andrew and Cheng, Alan},
+	url = {https://icml-compbio.github.io/2023/papers/WCBICML2023_paper53.pdf},
 	month = jul,
 	year = {2023}}
 ```
