@@ -31,10 +31,12 @@ current models include:
 - AbLEF manuscript uses LowModeMD in MOE and requires a license that can be acquired: https://www.chemcomp.com/
 	- input sequence fasta file with variable fragment (Fv) into MOE
  	- homology model by running MOE Antibody Modeler Application (default settings)
-  	- run MOE Stochastic Titration Application (nconf=50, T=300 or 400K, pH=6.5-7.5, salt=NaCl, salt_conc=0.1) 
-- alternatively, ensemble generation can be similarly achieved using OpenMM simulations with implicit solvent
+  	- run MOE Stochastic Titration Application (nconf=50, T=300 or 400K, salt_conc=0.1) 
+- We also provide an open-source alternative to researchers using ImmuneBuilder and OpenMM
+	- input heavy (--h) and light (--l) chain sequence to generate mAb with immunebuilder
+ 	- run OpenMM simulation engine to generate ensemble with implicit solvent
 ```
-    python ./data/ensemble.py --input='/pathway/to/input/pdb --pH 7.0 --T 300 --p_salt 'Na' --n_salt 'Cl' --salt_conc=0.1'
+    python ./data/ensemble.py --pdb='/pathway/to/input/mAb.pdb' --output='openmm_step_mAb.pdb' --T 300 --conc=0.1 --steps 50000'
 ```
 ### 2. cluster structures from ensemble
 - pdb files from ensemble generation can be clustered using density based spatial clustering on the backbone atom distance matrices
