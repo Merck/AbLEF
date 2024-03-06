@@ -44,7 +44,6 @@ current models include:
 ### 3. data storage & processing 
 - to utilize multi-structure ensemble fusion (LEF) pdb files in data directories are converted to pairwise distance tensors and saved as numpy arrays
 - fasta files are converted to txt files for the heavy and light chain using IMGT canonical alignment (padded as zeros)
-- ensemble length (i.e., L or ens_L) is specified during training and inference: 'config/setup.json'
 - gif below depicts an ensemble of pairwise distance tensors used for training AbLEF
 ```
     python ./data/preprocess.py
@@ -54,6 +53,7 @@ current models include:
 
 ## train and hyperparameter tune
 - training and tuning execution is specified by the configuration files: 'config/setup.json'
+- ensemble length (i.e., L or ens_L) is specified during training and inference: 'config/setup.json'
 ```
     python ./src/train_tune.py
 ```
