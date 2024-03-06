@@ -32,7 +32,7 @@ current models include:
 	- input sequence fasta file with variable fragment (Fv) into MOE
  	- homology model by running MOE Antibody Modeler Application (default settings)
   	- run MOE Stochastic Titration Application (nconf=50, T=300 or 400K, pH=6.5-7.5, salt=NaCl, salt_conc=0.1) 
-- alternatively, ensemble generation can be similarly achieved with OpenMM simulations in implicit solvent
+- alternatively, ensemble generation can be similarly achieved using OpenMM simulations with implicit solvent
 ```
     python ./data/ensemble.py --input='/pathway/to/input/pdb --pH 7.0 --T 300 --p_salt 'Na' --n_salt 'Cl' --salt_conc=0.1'
 ```
@@ -53,7 +53,7 @@ current models include:
 ![Alt text](pics/Ab.gif)
 
 ## train and hyperparameter tune
-- training and tuning execution is specified by the configuration files (config/setup.json)
+- training and tuning execution is specified by the configuration files: 'config/setup.json'
 ```
     python ./src/train_tune.py
 ```
@@ -77,7 +77,6 @@ current models include:
 ```
     python ./src/holdout.py
 ```
-
 
 ### logging information and model storage
 - train_tune.log files are recorded and saved for every time stamped batch run
