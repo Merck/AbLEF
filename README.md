@@ -34,18 +34,18 @@ current models include:
   	- run MOE Stochastic Titration Application (nconf=50, T=300 or 400K, pH=6.5-7.5, salt=NaCl, salt_conc=0.1) 
 - alternatively, ensemble generation can be similarly achieved with OpenMM simulations in implicit solvent
 ```
-    python ./data/ensemble.py --input='/pathway/to/input/pdb --pH 7.0 --T 300 --salt 'NaCl' --salt_conc=0.1'
+    python ./data/ensemble.py --input='/pathway/to/input/pdb --pH 7.0 --T 300 --p_salt 'Na' --n_salt 'Cl' --salt_conc=0.1'
 ```
-### 2. ensemble clusters
+### 2. cluster structures from ensemble
 - pdb files from ensemble generation can be clustered using density based spatial clustering on the backbone atom distance matrices
 ```
     python ./cluster/main.py input='/pathway/to/pdbs/' output='/pathway/to/pdbs/results' cpu_threads=28 noh=true method=dbscan eps=1.9 min_samples=1 
 ```
 ### 3. data storage & processing 
-- to utilize ensemble fusion (LEF) pdb files in data directories are converted to pairwise distance tensors and saved as numpy arrays
-- by default the residue centroid, side-chain centroid, alpha-carbon, and beta-carbon are computed (roidDIST, scoidDIST, CaDIST, and CbDIST)
+- to utilize multi-structure ensemble fusion (LEF) pdb files in data directories are converted to pairwise distance tensors and saved as numpy arrays
 - fasta files are converted to txt files for the heavy and light chain using IMGT canonical alignment (padded as zeros)
-- after processing clustered pdbs, the distance matrices will be stored in their respective directories depicted in the following gif
+- ensemble length (i.e., L or ens_L) is specified during training and inference: 'config/setup.json'
+- gif below depicts an ensemble of pairwise distance tensors used for training AbLEF
 ```
     python ./data/preprocess.py
 ```
