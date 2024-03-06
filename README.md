@@ -16,7 +16,7 @@ current models include:
         year = {2023}}
 ```
 
-![image info](pics/alef.png)
+![image info](pics/AbLEF.png)
 
 ## requirements
 - git lfs (for locally stored language models)
@@ -26,19 +26,14 @@ current models include:
 - aLEF.yaml
 
 ## preprocess data
-### ensemble generation and structural clustering
+### 1. ensemble generation and structural clustering
 - Boltzmann imitator for multi-structure ensemble generation saved as pdb files (LowModeMD, MD, metadynamics, replica-exchange, etc.)
 - pdb files from ensemble generation can be clustered using density based spatial clustering on the backbone atom distance matrices
 ```
     cluster/main.py
 ```
-### data storage
-- each antibody is organized into a directory which must contain the pdb and fasta files
-```
-    data/train/
-    data/holdout/
-```
-### data processing
+### 2. data storage & processing
+- after clustering the 
 - to utilize ensemble fusion (LEF) pdb files in data directories are converted to pairwise distance tensors and saved as numpy arrays
 - by default the residue centroid, side-chain centroid, alpha-carbon, and beta-carbon are computed (roidDIST, scoidDIST, CaDIST, and CbDIST)
 - fasta files are converted to txt files for the heavy and light chain using IMGT canonical alignment (padded as zeros)
@@ -48,28 +43,6 @@ current models include:
 ```
 
 ![Alt text](pics/Ab.gif)
-
-## AbPROP integration
-
-![image info](pics/abprop.png)
-
-```
-@article{widatalla2023,
-	title = {{AbPROP}: {Language} and {Graph} {Deep} {Learning} for {Antibody} {Property} {Prediction}},
-	journal = {ICML Workshop on Computational Biology},
-	author = {Widatalla, Talal and Rollins, Zachary A and Chen, Ming-Tang and Waight, Andrew and Cheng, Alan},
-	url = {https://icml-compbio.github.io/2023/papers/WCBICML2023_paper53.pdf},
-	month = jul,
-	year = {2023}}
-```
-
-- we also integrated codebase from AbPROP to compare the AbLEF results with graph neural netowrks + language fusion
-- graph neural networks are currently only single-structure molecular representations
-- to utilize graph neural networks pdb files are converted and saved as torch geometric Data objects for GVP & GAT
-```
-    data/preprocess_graphs/graph_structs.py
-```
-
 
 ## train and hyperparameter tune
 - training and tuning execution is specified by the configuration files (config/setup.json)
@@ -113,6 +86,27 @@ current models include:
 ```
     logs/batch_*****/ray_tune/hp_tune_*****/checkpoint_*****/dict_checkpoint.pkl (setup["training"]["ray_tune"] == True)
     models/weights/batch_*****/ALEF*****.pth (setup["training"]["ray_tune"] == False)
+```
+## AbPROP integration
+
+![image info](pics/abprop.png)
+
+```
+@article{widatalla2023,
+	title = {{AbPROP}: {Language} and {Graph} {Deep} {Learning} for {Antibody} {Property} {Prediction}},
+	journal = {ICML Workshop on Computational Biology},
+	author = {Widatalla, Talal and Rollins, Zachary A and Chen, Ming-Tang and Waight, Andrew and Cheng, Alan},
+	url = {https://icml-compbio.github.io/2023/papers/WCBICML2023_paper53.pdf},
+	month = jul,
+	year = {2023}}
+```
+
+- we also integrated codebase from AbPROP: https://github.com/merck/abprop 
+- AbPROP methods are used as baselines to compare the AbLEF results with graph neural netowrks + language fusion
+- graph neural networks are currently only single-structure molecular representations
+- to utilize graph neural networks pdb files are converted and saved as torch geometric Data objects for GVP & GAT
+```
+    data/preprocess_graphs/graph_structs.py
 ```
 
 # License
