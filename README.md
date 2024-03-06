@@ -53,7 +53,7 @@ current models include:
 
 ## train and hyperparameter tune
 - training and tuning execution is specified by the configuration files: 'config/setup.json'
-- ensemble length (i.e., L or ens_L) is specified during training and inference: 'config/setup.json'
+- ensemble length (i.e., L or ens_L) is specified during training and inference: setup['training']['ens_L']
 ```
     python ./src/train_tune.py
 ```
