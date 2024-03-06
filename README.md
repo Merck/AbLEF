@@ -33,8 +33,8 @@ current models include:
  	- homology model by running MOE Antibody Modeler Application (default settings)
   	- run MOE Stochastic Titration Application (nconf=50, T=300 or 400K, salt_conc=0.1) 
 - We also provide an open-source alternative to researchers using ImmuneBuilder and OpenMM
-	- input heavy (--h) and light (--l) chain sequence to generate mAb with immunebuilder
- 	- run OpenMM simulation engine to generate ensemble with implicit solvent
+	- input heavy (--h) and light (--l) chain sequence to generate mAb with immunebuilder: https://github.com/oxpig/ImmuneBuilder
+ 	- run OpenMM simulation engine to generate ensemble with implicit solvent: https://github.com/openmm/openmm
 ```
     python ./data/ensemble.py --pdb='/pathway/to/input/mAb.pdb' --output='openmm_step_mAb.pdb' --T=300 --conc=0.1 --steps=50000
 ```
