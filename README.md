@@ -5,7 +5,7 @@ fuses antibody structural ensemble and language representation for property pred
 current models include:
 - language -- AbLang, ProtBERT, ProtBERT-BFD
 - multi-structure ensemble -- LEF (CNN transformer)
-
+![image info](pics/AbLEF.png)
 ```
 @article{rollins2023,
         title = {{AbLEF}: {Antibody} {Language} {Ensemble} {Fusion} for {thermodynamically} {empowered} {property} {predictions}},
@@ -15,9 +15,6 @@ current models include:
         month = dec,
         year = {2023}}
 ```
-
-![image info](pics/AbLEF.png)
-
 ## requirements
 - git lfs (for locally stored language models)
     - protbert requires local installation to config: https://huggingface.co/Rostlab/protbert
