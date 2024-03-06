@@ -26,20 +26,25 @@ current models include:
 - aLEF.yaml
 
 ## preprocess data
-### 1. ensemble generation and structural clustering
+### 1. ensemble generation
 - Boltzmann imitator for multi-structure ensemble generation saved as pdb files (LowModeMD, MD, metadynamics, replica-exchange, etc.)
+- AbLEF manuscript uses LowModeMD in MOE and requires a license that can be acquired here:
+- alternatively, ensemble generation can be similarly achieved in OpenMM
+```
+    python ./data/ensemble.py --input='/pathway/to/input/pdb'
+```
+### 2. structural ensemble clustering
 - pdb files from ensemble generation can be clustered using density based spatial clustering on the backbone atom distance matrices
 ```
-    cluster/main.py
+    python ./cluster/main.py input='/pathway/to/pdbs/' output='/pathway/to/pdbs/results' cpu_threads=28 noh=true method=dbscan eps=1.9 min_samples=1 
 ```
-### 2. data storage & processing
-- after clustering the 
+### 3. data storage & processing 
 - to utilize ensemble fusion (LEF) pdb files in data directories are converted to pairwise distance tensors and saved as numpy arrays
 - by default the residue centroid, side-chain centroid, alpha-carbon, and beta-carbon are computed (roidDIST, scoidDIST, CaDIST, and CbDIST)
 - fasta files are converted to txt files for the heavy and light chain using IMGT canonical alignment (padded as zeros)
 - after processing clustered pdbs, the distance matrices will be stored in their respective directories depicted in the following gif
 ```
-    data/preprocess.py
+    python ./data/preprocess.py
 ```
 
 ![Alt text](pics/Ab.gif)
