@@ -113,7 +113,7 @@ current models include:
 - graph neural networks are currently only single-structure molecular representations
 - to utilize graph neural networks pdb files are converted and saved as torch geometric Data objects for GVP & GAT
 ```
-    data/preprocess_graphs/graph_structs.py
+    python ./data/preprocess_graphs/graph_structs.py
 ```
 
 # License
