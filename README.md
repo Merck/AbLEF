@@ -109,8 +109,8 @@ current models include:
 	year = {2023}}
 ```
 
-- we also integrated codebase from AbPROP: https://github.com/merck/abprop 
-- AbPROP methods are used as baselines to compare the AbLEF results with graph neural netowrks + language fusion
+- we also integrated the [AbPROP codebase](https://github.com/merck/abprop)
+- [AbPROP methods](https://icml-compbio.github.io/2023/papers/WCBICML2023_paper53.pdf) are used as baselines to compare the AbLEF results with graph neural netowrks + language fusion
 - graph neural networks are currently only single-structure molecular representations
 - to utilize graph neural networks pdb files are converted and saved as torch geometric Data objects for GVP & GAT
 ```
