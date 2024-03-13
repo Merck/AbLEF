@@ -26,7 +26,7 @@ current models include:
 
 ## preprocess data
 ### 1. ensemble generation
-- Boltzmann imitator for multi-structure ensemble generation saved as pdb files (LowModeMD, MD, metadynamics, replica-exchange, etc.)
+- Boltzmann imitator for multi-structure ensemble generation saved as pdb files (e.g., [LowModeMD](https://pubs.acs.org/doi/10.1021/ci900508k), [MD](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005659))
 - AbLEF manuscript uses LowModeMD in MOE and requires a license that can be acquired from [CCG](https://www.chemcomp.com/)
 	- input sequence fasta file with variable fragment (Fv) into MOE
  	- homology model by running MOE Antibody Modeler Application (default settings)
