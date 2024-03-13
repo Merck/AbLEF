@@ -16,12 +16,12 @@ current models include:
         year = {2023}}
 ```
 ## requirements
-- [git lfs](https://git-lfs.com/) (for locally stored language models)
+- [git lfs](https://git-lfs.com/) for locally stored language models
     - [protbert](https://huggingface.co/Rostlab/protbert) requires local installation to 'config/'
     - [protbert-bfd](https://huggingface.co/Rostlab/protbert-bfd) requires local installation to 'config/' 
     - [ablang](https://github.com/oxpig/AbLang) is locally installed with .yaml file
 ```
-	conda env create conda env create --name ablef --file alef.yaml
+    conda env create --name ablef --file alef.yaml
 ```
 
 ## preprocess data
