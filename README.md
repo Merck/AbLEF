@@ -5,7 +5,7 @@ fuses antibody structural ensemble and language representation for property pred
 current models include:
 - language -- AbLang, ProtBERT, ProtBERT-BFD
 - multi-structure ensemble -- LEF (CNN transformer)
-![image info](pics/AbLEF.png)
+![image info](pics/fig1_rev.png)
 ```
 @article{rollins2023,
         title = {{AbLEF}: {Antibody} {Language} {Ensemble} {Fusion} for {thermodynamically} {empowered} {property} {predictions}},
