@@ -1,10 +1,10 @@
 # [AbLEF: Antibody Langauge Ensemble Fusion](https://ai4d3.github.io/papers/55.pdf)
 
-fuses antibody structural ensemble and language representation for property prediction
+fuses antibody 3D conformational ensemble and language representation for property prediction
 
 current models include:
 - language -- AbLang, ProtBERT, ProtBERT-BFD
-- multi-structure ensemble -- LEF (CNN transformer)
+- 3D conformational ensemble -- LEF (CNN transformer)
 ![image info](pics/fig1_rev.png)
 ```
 @article{rollins2023,
