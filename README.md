@@ -1,4 +1,4 @@
-# [AbLEF: Antibody Langauge Ensemble Fusion](https://ai4d3.github.io/papers/55.pdf)
+# [AbLEF: Antibody Langauge Ensemble Fusion](https://doi.org/10.1093/bioinformatics/btae268)
 
 fuses antibody 3D conformational ensemble and language representation for property prediction
 
