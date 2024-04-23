@@ -7,6 +7,15 @@ current models include:
 - 3D conformational ensemble -- LEF (CNN transformer)
 ![image info](pics/fig1_rev.png)
 ```
+@article{rollins2024,
+        title = {{AbLEF}: {Antibody} {Language} {Ensemble} {Fusion} for {thermodynamically} {empowered} {property} {predictions}},
+        journal = {Bioinformatics},
+        author = {Rollins, Zachary A and Widatalla, Talal and Waight, Andrew and Cheng, Alan C and Metwally, Essam},
+	url = {https://doi.org/10.1093/bioinformatics/btae268},
+        month = apr,
+        year = {2024}}
+```
+```
 @article{rollins2023,
         title = {{AbLEF}: {Antibody} {Language} {Ensemble} {Fusion} for {thermodynamically} {empowered} {property} {predictions}},
         journal = {The NeurIPS Workshop on New Frontiers of AI for Drug Discovery and Development (AI4D3 2023)},
